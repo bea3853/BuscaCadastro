@@ -1,0 +1,98 @@
+   algoritmo "Busca"
+   var
+      m:vetor [1..2,1..2]  de caracter
+
+      l:inteiro
+      c:inteiro
+
+      nome:caracter
+      resp:caracter
+      opc: inteiro
+
+
+      //------------------------------------------
+
+   procedimento cadastro()
+   inicio
+
+
+
+      escreval()
+      escreval ("CADASTRO")
+
+      para l de 1 ate 1 faca
+         para c de 1 ate 2 faca
+
+            escreval ("Digite nome e idade:")
+
+            leia (m[l],m[c])
+
+
+         fimpara
+      fimpara
+
+
+
+
+   fimprocedimento
+   //---------------------------------
+
+   procedimento busca()
+
+
+
+   inicio
+      escreval()
+      escreval ("BUSCA")
+
+      escreval ("Digite o nome que deseja buscar:")
+      leia(nome)
+      se nome = m[l] entao
+         escreval ("resultado:")
+         escreval (nome," ", "idade"," ", m[c])
+
+      senao
+         escreval ("Este nome não foi cadastrado")
+      fimse
+
+
+
+   fimprocedimento
+   //--------------------------------------------
+   procedimento sair()
+
+   inicio
+
+      escreval ("RETORNO: 1 / SAIR: 2")
+      leia (opc)
+      enquanto opc =  1  faca
+         cadastro()
+         busca()
+         escreval()
+         escreval ("SAIR 2?")
+         leia (opc)
+         se opc = 2 entao
+            escreval ("ate logo!")
+         senao
+            cadastro()
+            busca()
+
+
+
+
+
+   fimprocedimento
+   //--------------------------------------------
+
+
+   inicio
+
+      cadastro()
+      busca()
+      escreval("................")
+      sair()
+
+   fimse
+   fimenquanto
+
+   fimalgoritmo
